@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class AuthService {
-  register(): { msg: string } | PromiseLike<{ msg: string }> {
-    return { msg: 'User registered successfully' };
+  register(createUserDto: CreateUserDto) {
+    return createUserDto;
   }
 }
